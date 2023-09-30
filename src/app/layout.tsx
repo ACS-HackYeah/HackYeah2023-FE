@@ -1,5 +1,6 @@
 import "./globals.scss";
 import type { Metadata } from "next";
+import { Sidebar } from "@/components/Sidebar/Sidebar";
 
 export const metadata: Metadata = {
   title: "ACS | HackYeah 2023",
@@ -13,7 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Sidebar />
+
+        {children}
+      </body>
     </html>
   );
 }

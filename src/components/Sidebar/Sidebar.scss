@@ -1,0 +1,66 @@
+@import "@carbon/colors";
+
+.sidebar {
+  &__control {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $cool-gray-90;
+    color: $cool-gray-30;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $cool-gray-80;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    color: $cool-gray-30;
+
+    svg {
+      color: $cool-gray-30;
+    }
+
+    .cds--side-nav__link-text {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: $cool-gray-30;
+      gap: 8px;
+    }
+  }
+}
+
+.cds--side-nav {
+  .sidebar__item-text {
+    display: none;
+  }
+
+  &--expanded {
+    .sidebar__item-text {
+      display: block;
+      color: $cool-gray-30;
+    }
+  }
+}
+
+.cds--header {
+  background-color: transparent;
+  border-bottom: 1px solid $cool-gray-80;
+}
+
+.cds--side-nav__items {
+  background-color: $cool-gray-90;
+  color: $cool-gray-30;
+}
+
+.cds--side-nav__icon {
+  svg {
+    fill: $cool-gray-30;
+  }
+}
