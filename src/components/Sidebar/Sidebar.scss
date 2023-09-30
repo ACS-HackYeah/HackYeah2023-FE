@@ -34,6 +34,10 @@
       gap: 8px;
     }
   }
+
+  &__header-name {
+    color: $cool-gray-20 !important;
+  }
 }
 
 .cds--side-nav {
@@ -57,6 +61,12 @@
 .cds--side-nav__items {
   background-color: $cool-gray-90;
   color: $cool-gray-30;
+}
+
+.cds--side-nav__item {
+  .cds--side-nav__menu {
+    padding-left: 1rem;
+  }
 }
 
 .cds--side-nav__icon {

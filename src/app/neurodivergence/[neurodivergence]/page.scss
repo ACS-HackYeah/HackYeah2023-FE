@@ -1,0 +1,28 @@
+@import "@carbon/colors";
+
+.tiles {
+  display: grid;
+  padding-top: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  font-family: "IBM Plex Mono";
+
+  .cds--tile {
+    height: 200px;
+    display: grid;
+    font-size: 32px !important;
+    grid-template-columns: 1fr 5fr;
+    background-color: $cool-gray-70;
+    color: $cool-gray-50;
+
+    &:hover {
+      background-color: $cool-gray-70-hover;
+      color: $cool-gray-30-hover;
+    }
+    gap: 5rem;
+
+    svg {
+      width: 100%;
+    }
+  }
+}

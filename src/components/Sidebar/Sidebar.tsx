@@ -7,6 +7,7 @@ import {
   SideNavMenu,
   SideNavLink,
   SideNavItem,
+  HeaderName,
 } from "@carbon/react";
 import {
   OpenPanelLeft,
@@ -14,6 +15,14 @@ import {
   CarbonIconType,
   ExpandCategories,
   Activity,
+  Group,
+  Flag,
+  Cognitive,
+  TrainSpeed,
+  WordCloud,
+  Asleep,
+  Search,
+  DataEnrichmentAdd,
 } from "@carbon/icons-react";
 import "./Sidebar.scss";
 
@@ -21,6 +30,7 @@ interface NavigationRoute {
   label: string;
   url?: string;
   Icon: CarbonIconType;
+  expanded?: boolean;
   action?: () => void;
   children?: NavigationRoute[];
 }
@@ -33,10 +43,12 @@ const SideNavSection = ({
   action,
   children,
   Icon,
+  expanded = false,
 }: NavigationRoute) => {
   if (children) {
     return (
       <SideNavMenu
+        defaultExpanded={expanded}
         title={
           <div className={`${COMPONENT_NAME}__item`}>
             <Icon />
@@ -80,15 +92,78 @@ export const Sidebar = () => {
       url: "/",
     },
     {
-      label: "More...",
-      Icon: ExpandCategories,
+      label: "Support groups",
+      Icon: Group,
+      expanded: true,
       children: [
         {
-          label: "More 1",
-          Icon: Activity,
-          url: "/more-1",
+          label: "Expats in Poland",
+          Icon: Flag,
+          children: [
+            {
+              label: "Search",
+              Icon: Search,
+              url: "/search/expats-in-poland",
+            },
+            {
+              label: "English",
+              Icon: Activity,
+              url: "/expats-in-poland/english",
+            },
+            {
+              label: "German",
+              Icon: Activity,
+              url: "/expats-in-poland/german",
+            },
+            {
+              label: "Spanish",
+              Icon: Activity,
+              url: "/expats-in-poland/spanish",
+            },
+            {
+              label: "Hindi",
+              Icon: Activity,
+              url: "/expats-in-poland/hindi",
+            },
+          ],
+        },
+        {
+          label: "Neurodivergence",
+          Icon: Cognitive,
+          children: [
+            {
+              label: "Search",
+              Icon: Search,
+              url: "/search/neurodivergence",
+            },
+            {
+              label: "ADHD",
+              Icon: TrainSpeed,
+              url: "/neurodivergence/adhd",
+            },
+            {
+              label: "Autism",
+              Icon: WordCloud,
+              url: "/neurodivergence/autism",
+            },
+            {
+              label: "Depression",
+              Icon: Asleep,
+              url: "/neurodivergence/depression",
+            },
+          ],
         },
       ],
+    },
+    {
+      label: "Find Support Group",
+      Icon: Search,
+      url: "/search/others",
+    },
+    {
+      label: "Add Group",
+      Icon: DataEnrichmentAdd,
+      url: "/add",
     },
   ];
 
@@ -98,6 +173,9 @@ export const Sidebar = () => {
         <div className={`${COMPONENT_NAME}__control`}>
           <OpenPanelLeft onClick={() => setIsExpanded(!isExpanded)} />
         </div>
+        <HeaderName className={`${COMPONENT_NAME}__header-name`} prefix="">
+          ThoughtsOverflow
+        </HeaderName>
       </Header>
       <SideNav expanded={isExpanded} isChildOfHeader={false}>
         <SideNavItems>
