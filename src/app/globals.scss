@@ -1,5 +1,7 @@
 @use "@carbon/react";
+@import "@carbon/colors";
 
 body {
   font-family: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  background-color: $cool-gray-100;
 }
