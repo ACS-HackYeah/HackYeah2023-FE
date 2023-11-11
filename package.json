@@ -11,7 +11,7 @@
   "dependencies": {
     "@carbon/icons-react": "^11.28.0",
     "@carbon/react": "^1.39.0",
-    "axios": "^1.5.1",
+    "axios": "^1.6.0",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
